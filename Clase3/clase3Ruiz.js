@@ -5,7 +5,7 @@ while(opcion!="ESC"){
         alert(numero + " x " + i + " es igual a " + (i*numero))
     }
 
-    opcion = prompt("Ingrese: ESC Para detener el programa \nIngrese cualquier otro caracter para volver a ejecutar ").toUpperCase()
+    opcion = prompt("Ingrese: ESC Para detener el programa \nIngrese cualquier otro caracter para volver a ejecutar ").toUpperCase();
     /* toUpperCase por si el usuario ingresa esc en lowercase */
 
 }
