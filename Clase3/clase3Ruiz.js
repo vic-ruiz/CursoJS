@@ -1,4 +1,4 @@
-let opcion = " "
+let opcion = " ";
 while(opcion!="ESC"){
     let numero = parseInt(prompt("Ingrese un numero y obtenga sus primeros 5 multiplos"));
     for (let i = 1; i <= 5 ; i++){
