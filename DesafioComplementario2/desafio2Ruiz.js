@@ -23,7 +23,7 @@ const pelicula3 = new Pelicula("El viaje de Chihiro",2001,120,3,800);
 
 const catalogo = [pelicula1, pelicula2, pelicula3];
 
-catalogo.sort((a,b) => (a.estreno > b.estreno) ? 1 : ((b.estreno > a.estreno) ? -1 : 0))
+catalogo.sort((a,b) => (a.estreno > b.estreno) ? 1 : ((b.estreno > a.estreno) ? -1 : 0));
 
 /* Ordenar peliculas por orden de estreno (de mas antigua a mas moderna) */
 
