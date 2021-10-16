@@ -7,8 +7,8 @@ class Pelicula {
         this.titulo = titulo;
         this.estreno = estreno;
         this.duracion = duracion;
-        this.id = id
-        this.precio = precio
+        this.id = id;
+        this.precio = precio;
     }
 
     descripcion(){
@@ -21,7 +21,7 @@ const pelicula1 = new Pelicula("Kimetsu no Yaiba: Mugen Ressha-hen",2020,117,1,6
 const pelicula2 = new Pelicula("Akira",1988,124,2,700);
 const pelicula3 = new Pelicula("El viaje de Chihiro",2001,120,3,800);
 
-const catalogo = [pelicula1, pelicula2, pelicula3]
+const catalogo = [pelicula1, pelicula2, pelicula3];
 
 function mostrarCatalogo(){
     if (preguntaCatalogo = confirm("¿Quiere ver el catalogo de peliculas?")){
