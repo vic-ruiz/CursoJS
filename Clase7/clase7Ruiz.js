@@ -12,7 +12,7 @@ class Pelicula {
     }
 
     descripcion(){
-        alert("Se selecciono la pelicula "+this.titulo+" estrenada en "+this.estreno+", con una duracion de "+this.duracion+" minutos \nCon un precio de "+this.precio+" pesos por entrada");
+        alert(`Se selecciono la pelicula ${this.titulo} estrenada en ${this.estreno}, con una duracion de ${this.duracion} minutos \nCon un precio de ${this.precio} pesos por entrada`);
     }
 
 }
@@ -26,7 +26,7 @@ const catalogo = [pelicula1, pelicula2, pelicula3];
 function mostrarCatalogo(){
     if (preguntaCatalogo = confirm("¿Quiere ver el catalogo de peliculas?")){
         for (let i=0; i < catalogo.length; i++){
-            alert(catalogo[i].id+"-"+catalogo[i].titulo)
+            alert(`${catalogo[i].id}-${catalogo[i].titulo}`)
         }
     }
 }
