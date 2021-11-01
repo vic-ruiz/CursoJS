@@ -60,7 +60,7 @@ compraClick.addEventListener("click", () =>{
         precioOrden(catalogo.find(element => element.id === producto).precio);
         otroProducto = confirm("¿Quiere reservar mas entradas?")
     } while(otroProducto);
-    alert("Su total a pagar es " + total);
+    alert("Su total a pagar es " + total)
 })
 
 
