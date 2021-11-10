@@ -100,28 +100,30 @@ function eliminarCarrito(){
 
 
 /* Eventos*/
-
-for (const pelicula of catalogo) {
-    $(".pelicula").append(`
-        <div class=" col-5 col-md-4 col-lg-3 m-lg-1">
-            <div class="card">
-                <img src="images/pelicula${pelicula.id}.webp" class="card-img pelicula${pelicula.id}" alt="${pelicula.titulo}">
-            </div>
-        </div>`
-    )}
-
-
-
-for (let i = 0; i<catalogo.length; i++) {
-    $(`.pelicula${(i+1)}`).on("click", () => {
-        elegirPelicula(catalogo[i]);
-        precioOrden(catalogo[i]);
-        mostrarCompra();
+$(document).ready(()=> {
+    for (const pelicula of catalogo) {
+        $(".pelicula").append(`
+            <div class=" col-5 col-md-4 col-lg-3 m-lg-1">
+                <div class="card">
+                    <img src="images/pelicula${pelicula.id}.webp" class="card-img pelicula${pelicula.id}" alt="${pelicula.titulo}">
+                </div>
+            </div>`
+        )}
+    
+    
+    
+    for (let i = 0; i<catalogo.length; i++) {
+        $(`.pelicula${(i+1)}`).on("click", () => {
+            elegirPelicula(catalogo[i]);
+            precioOrden(catalogo[i]);
+            mostrarCompra();
+        })
+    
+    }
+    
+    $(".btnLimpiar").on("click", () => {
+        eliminarCarrito();
     })
-
-}
-
-$(".btnLimpiar").on("click", () => {
-    eliminarCarrito();
 })
+
 
