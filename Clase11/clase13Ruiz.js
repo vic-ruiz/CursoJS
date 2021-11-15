@@ -14,6 +14,8 @@ class Pelicula {
         alert(`Se selecciono la pelicula ${this.titulo} estrenada en ${this.estreno}, con una duracion de ${this.duracion} minutos \nCon un precio de ${this.precio} pesos por entrada`);
     }
 
+    
+
 
 }
 
@@ -70,6 +72,7 @@ function mostrarCompra(){
     let costoTotal = localStorage.getItem('costoTotal');
     if(carroProductos){
         $(".peliculasCompradas").html('')
+        $(".btnCompras").html('')
         Object.values(carroProductos).map(item =>{
             $(".peliculasCompradas").append(
                 `<div class="peliculas col-3">
@@ -85,9 +88,10 @@ function mostrarCompra(){
             `<div class="totalPagar col-9">
                 <p>Total</p>
             </div>
-            <div class="priceTotal col-3">${costoTotal}</div>`)
-
+            <div class="priceTotal col-3">${costoTotal}</div>`);
     }
+
+
 }
 
 mostrarCompra()
@@ -123,6 +127,22 @@ $(document).ready(()=> {
     
     $(".btnLimpiar").on("click", () => {
         eliminarCarrito();
+        
+    })
+
+    $(".btnComprar").on("click", () => {
+        $(".cart").slideUp(1000);
+        $("section").append(`
+        <div class="row intro mb-5 jumbotron jumbotron-fluid mensajeCompra" style="display:none">
+            <h1 class="col-12 display-4">GRACIAS POR SU COMPRA</h1>
+            <p class="lead">"El proceso fue exitoso"</p>
+        </div>`
+        );
+
+        $(".mensajeCompra").fadeIn(2000)
+                            .delay(2000);;
+        
+        
     })
 })
 
