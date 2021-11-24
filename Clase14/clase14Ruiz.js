@@ -25,6 +25,10 @@ const pelicula3 = new Pelicula("El viaje de Chihiro", 2001, 120, 3, 800);
 
 const catalogo = [pelicula1, pelicula2, pelicula3];
 
+const urlAPI = 'https://animechan.vercel.app/api/random'
+
+
+
 /*Funciones */
 
 function elegirPelicula(pelicula){
@@ -131,13 +135,25 @@ $(document).ready(()=> {
     })
 
     $(".btnComprar").on("click", () => {
+        
         $(".cart").slideUp(1000);
         $("section").append(`
         <div class="row intro mb-5 jumbotron jumbotron-fluid mensajeCompra" style="display:none">
             <h1 class="col-12 display-4">GRACIAS POR SU COMPRA</h1>
-            <p class="lead">"El proceso fue exitoso"</p>
         </div>`
         );
+
+        $.ajax({
+            method: "GET",
+            url: urlAPI,
+            success: function(respuesta){
+                $(".mensajeCompra").append(`
+                    <h2>Frase del dia </h2>
+                    <p>${respuesta.quote}</p>
+                    <p>"${respuesta.character}"</p>
+                    <p> En ${respuesta.anime}</p>`)
+            }
+        })
 
         $(".mensajeCompra").fadeIn(2000)
                             .delay(2000);;
